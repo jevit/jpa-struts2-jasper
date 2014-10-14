@@ -2,15 +2,30 @@ package struts2.action;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import struts2.service.IUtilisateurService;
+import struts2.service.UtilisateurService;
 
-public class UtilisateurAction {
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UtilisateurAction extends ActionSupport {
 
 	@Autowired
-	IUtilisateurService utilisateurService;
+	UtilisateurService utilisateurService;
+
+	public static final String MESSAGE = "hello";
+
+	private String message;
 
 	public String execute() throws Exception {
-		utilisateurService.print();
-		return utilisateurService.print();
+
+		return SUCCESS;
 	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 }

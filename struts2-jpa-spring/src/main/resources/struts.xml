@@ -6,17 +6,21 @@
     <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
     <constant name="struts.devMode" value="true" />
  
-	<package name="utilisateurAction" namespace="/utilisateur" extends="struts-default">
-		<action name="utilisateurAction" class="utilisateurAction"  >
-			<result name="success">pages/index.jsp</result>
+	<package name="default" namespace="/" extends="jasperreports-default">
+		<action name="reportAction" class="reportAction">
+			<result name="success" type="jasper">
+  				<param name="location">/WEB-INF/classes/reports/test.jasper</param>
+           		<param name="format">PDF</param>
+  				<param name="dataSource">listUtilisateurVO</param>
+			</result>
+			<result name="error">pages/error.jsp</result>
 		</action>
 	</package>
 	
-	<package name="default" namespace="/" extends="struts-default">
-		<action name="utilisateurAction" class="utilisateurAction"   >
-			<result name="success">pages/index.jsp</result>
+ 	<package name="default" namespace="/utilisateur/" extends="struts-default">
+		<action name="utilisateurAction" class="utilisateurAction">
+			<result name="success" type="jasper">pages/utilisateur.jsp</result>
+			<result name="error">pages/error.jsp</result>
 		</action>
 	</package>
-	
- 
 </struts>

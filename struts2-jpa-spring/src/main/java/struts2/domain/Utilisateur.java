@@ -20,10 +20,10 @@ public class Utilisateur extends AbstractEntity<Long> {
 
 	private boolean enabled = true;
 	@Column
-	private String lastname = null;
+	private String lastname;
 
 	@Column
-	private String firstname = null;
+	private String firstname;
 
 	@Column
 	private String login = null;
@@ -93,8 +93,7 @@ public class Utilisateur extends AbstractEntity<Long> {
 		builder.append(",");
 		builder.append(this.getEmail() != null ? this.getEmail() : "null");
 		builder.append(",");
-		builder.append(this.getFirstname() != null ? this.getFirstname()
-				: "null");
+		builder.append(this.getFirstname() != null ? this.getFirstname() : "null");
 		builder.append(",");
 		builder.append(this.getLastname() != null ? this.getLastname() : "null");
 		builder.append(",");

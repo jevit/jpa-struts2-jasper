@@ -13,12 +13,11 @@ public interface UtilisateurDao {
 
 	public Utilisateur get(Long id);
 
-	public Collection<Utilisateur> list(Integer firstResult,
-			Integer maxResults, String orderBy, String order);
+	public Collection<Utilisateur> list(Integer firstResult, Integer maxResults, String orderBy, String order);
 
-	public Collection<Utilisateur> search(String textSearched,
-			Integer firstResult, Integer maxResults, String orderBy,
-			String order);
+	public Collection<Utilisateur> listAll();
+
+	public Collection<Utilisateur> search(String textSearched, Integer firstResult, Integer maxResults, String orderBy, String order);
 
 	public Long count();
 

@@ -3,6 +3,7 @@
 	<name>struts2-jpa-spring</name>
 	<comment></comment>
 	<projects>
+		<project>struts2-jasperreports-plugin</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -16,7 +16,7 @@
          <property name="hibernate.format_sql" value="true" />
    		 <property name="hibernate.hbm2ddl.auto" value="create-drop" />
    		 <property name="hibernate.show_sql" value="true" />
-		<!--  <property name="hibernate.hbm2ddl.import_files" value="sequence.sql,insert.sql" />   -->
+		 <property name="hibernate.hbm2ddl.import_files" value="script/sequence.sql,script/insert.sql" />  
 		 <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
     	</properties>
     </persistence-unit>
