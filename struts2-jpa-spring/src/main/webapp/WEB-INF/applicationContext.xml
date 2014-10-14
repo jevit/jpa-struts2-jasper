@@ -51,6 +51,7 @@
 	<!-- bean Struts 2 -->
 	<bean id="utilisateurAction" class="struts2.action.UtilisateurAction"/>
 	<bean id="reportAction" class="struts2.action.ReportAction"/>
+	<bean id="loginAction" class="struts2.action.LoginAction"/>
 	<!-- <bean id="pdfViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
 	<property name="location"><value>/WEB-INF/jasper-views.xml</value></property>
 	<property name="order"><value>1</value></property>
