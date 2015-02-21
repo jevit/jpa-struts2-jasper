@@ -32,7 +32,7 @@ public class LoginAction extends ActionSupport {
 
 	// simple validation
 	public void validate() {
-		if ("mkyong".equals(getUsername())) {
+		if ("admin".equals(getUsername())) {
 			addActionMessage("You are valid user!");
 		} else {
 			addActionError("I don't know you, dont try to hack me!");

@@ -7,7 +7,7 @@
     <constant name="struts.devMode" value="true" />
 	<constant name="struts.custom.i18n.resources" value="global" />
 
-	<!-- <package name="default" namespace="/" extends="jasperreports-default">
+	 <package name="default" namespace="/" extends="jasperreports-default">
 		<action name="reportAction" class="reportAction">
 			<result name="success" type="jasper">
   				<param name="location">/WEB-INF/classes/reports/test.jasper</param>
@@ -16,7 +16,7 @@
 			</result>
 			<result name="error">commun/error.jsp</result>
 		</action> 
-	</package> -->
+	</package> 
 	
  	<package name="utilisateur" namespace="/utilisateur" extends="struts-default">
 	 	<action name="login">
