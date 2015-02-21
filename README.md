@@ -1,2 +1,3 @@
 # strus2-jasper
-jasperreports and struts2
+jasperreports 5 and struts2, jpa
+BD : PostGreSQL (  Base : struts2" , identifiant=postgres:admin )
