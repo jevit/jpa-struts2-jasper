@@ -1,4 +1,4 @@
 # struts2-jasper
-jasperreports 5 and struts2, jpa
+Techno : JasperReports 5.6, Struts 2, JPA, Springs
 BD : PostGreSQL (  Base : struts2 , postgres:admin )
 
