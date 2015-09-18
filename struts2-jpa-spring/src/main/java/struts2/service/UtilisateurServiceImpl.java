@@ -1,5 +1,6 @@
 package struts2.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -37,16 +38,13 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Transactional(readOnly = true)
 	public Utilisateur get(Long id) {
 		Utilisateur userEntity = dao.get(id);
-
 		return userEntity;
 	}
 
 	@Transactional(readOnly = true)
 	public List<Utilisateur> list(String textSearched, Integer firstResult, Integer maxResults, String orderBy, String order) {
-
 		Collection<Utilisateur> list = null;
 		Long count = null;
-
 		if (StringUtils.isEmpty(textSearched)) {
 			list = dao.list(firstResult, maxResults, orderBy, order);
 			count = dao.count();
@@ -70,11 +68,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	}
 
 	@Transactional
-	public String print() {
+	public String print() throws IOException {
 		reportService.launchRapport();
-		LOGGER.info("info");
-		LOGGER.debug("debug");
-		LOGGER.warn("warn");
 		return "print";
 	}
 }
