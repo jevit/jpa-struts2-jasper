@@ -1,11 +1,11 @@
 package struts2.service;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.List;
 
 import struts2.domain.Utilisateur;
+import struts2.dto.UtilisateurDto;
 
 public interface UtilisateurService {
 
@@ -19,7 +19,5 @@ public interface UtilisateurService {
 
 	public Utilisateur findUserByName(String login);
 
-	public String print() throws IOException;
-
-	public List<Utilisateur> listAll();
+	public List<UtilisateurDto> listAll();
 }

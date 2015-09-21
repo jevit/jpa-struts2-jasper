@@ -1,12 +1,26 @@
 package struts2.service;
 
 import java.io.IOException;
+import java.util.List;
 
-import org.springframework.web.servlet.ModelAndView;
+import net.sf.jasperreports.engine.JRException;
+
+import org.springframework.core.io.Resource;
+
+import struts2.dto.UtilisateurDto;
 
 public interface ReportService {
 
-	public void launchRapport() throws IOException;
+	/**
+	 * Lancement du rapport
+	 * 
+	 * @param listUtilisateurDto
+	 *            list a transmettre au rapport
+	 * @param jasperFileDirectory
+	 *            repertoire du rapport
+	 * @throws IOException
+	 * @throws JRException
+	 */
+	public void editionListeUtilisateur(List<UtilisateurDto> listUtilisateurDto, Resource jasper) throws IOException, JRException;
 
-	public ModelAndView doSalesReportPDF(ModelAndView modelAndView);
 }

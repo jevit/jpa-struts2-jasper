@@ -4,9 +4,9 @@ struts2\action\ReportAction.class
 struts2\dao\UtilisateurDao.class
 struts2\dao\GenericDao.class
 struts2\service\ReportService.class
-struts2\domain\UtilisateurVO.class
 struts2\dao\UtilisateurDaoImpl.class
 struts2\action\LoginAction.class
+struts2\dto\UtilisateurDto.class
 struts2\dao\GenericDaoImpl.class
 struts2\service\UtilisateurServiceImpl.class
 struts2\domain\AbstractEntity.class

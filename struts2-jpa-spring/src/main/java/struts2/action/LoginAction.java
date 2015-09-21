@@ -25,9 +25,7 @@ public class LoginAction extends ActionSupport {
 
 	// business logic
 	public String execute() {
-
 		return "SUCCESS";
-
 	}
 
 	// simple validation

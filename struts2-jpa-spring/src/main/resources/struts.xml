@@ -12,7 +12,7 @@
 			<result name="success" type="jasper">
   				<param name="location">/WEB-INF/classes/reports/test.jasper</param>
            		<param name="format">PDF</param>
-  				<param name="dataSource">listUtilisateurVO</param>
+  				<param name="dataSource">listUtilisateurDto</param>
 			</result>
 			<result name="error">commun/error.jsp</result>
 		</action> 

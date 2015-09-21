@@ -1,6 +1,5 @@
 package struts2.service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -14,30 +13,30 @@ import org.springframework.util.StringUtils;
 
 import struts2.dao.UtilisateurDao;
 import struts2.domain.Utilisateur;
+import struts2.dto.UtilisateurDto;
 
 @Service
+@Transactional
 public class UtilisateurServiceImpl implements UtilisateurService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(UtilisateurServiceImpl.class);
 	@Autowired
-	private UtilisateurDao dao;
-	@Autowired
-	private ReportService reportService;
+	private UtilisateurDao utilisateurDao;
 
 	@Transactional
 	public Long saveOrUpdate(Utilisateur userDto) {
 
-		return dao.saveOrUpdate(userDto);
+		return utilisateurDao.saveOrUpdate(userDto);
 	}
 
 	@Transactional
 	public void delete(Long id) {
-		dao.delete(id);
+		utilisateurDao.delete(id);
 	}
 
 	@Transactional(readOnly = true)
 	public Utilisateur get(Long id) {
-		Utilisateur userEntity = dao.get(id);
+		Utilisateur userEntity = utilisateurDao.get(id);
 		return userEntity;
 	}
 
@@ -46,30 +45,26 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		Collection<Utilisateur> list = null;
 		Long count = null;
 		if (StringUtils.isEmpty(textSearched)) {
-			list = dao.list(firstResult, maxResults, orderBy, order);
-			count = dao.count();
+			list = utilisateurDao.list(firstResult, maxResults, orderBy, order);
+			count = utilisateurDao.count();
 		} else {
-			list = dao.search(textSearched, firstResult, maxResults, orderBy, order);
-			count = dao.countSearch(textSearched);
+			list = utilisateurDao.search(textSearched, firstResult, maxResults, orderBy, order);
+			count = utilisateurDao.countSearch(textSearched);
 		}
 
 		return new ArrayList<Utilisateur>(list);
 	}
 
 	@Transactional(readOnly = true)
-	public List<Utilisateur> listAll() {
-		List<Utilisateur> listUtilisateur = (List<Utilisateur>) dao.listAll();
-		return listUtilisateur;
+	public List<UtilisateurDto> listAll() {
+		List<Utilisateur> listUtilisateur = (List<Utilisateur>) utilisateurDao.listAll();
+		List<UtilisateurDto> listUtilisateurDto = UtilisateurDto.toUtilisateurDto(listUtilisateur);
+		return listUtilisateurDto;
 	}
 
 	@Transactional
 	public Utilisateur findUserByName(String login) {
-		return dao.findByLogin(login);
+		return utilisateurDao.findByLogin(login);
 	}
 
-	@Transactional
-	public String print() throws IOException {
-		reportService.launchRapport();
-		return "print";
-	}
 }
