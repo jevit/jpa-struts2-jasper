@@ -27,11 +27,12 @@ public class ReportAction extends ActionSupport {
 	private String jasperFileDirectory;
 
 	public String execute() throws JRException, IOException {
-		// todo s'assurer de la synchro
-		listUtilisateurDto = utilisateurService.listAll();
 		Resource jrxml = new ClassPathResource("reports/listeUtilisateurs.jrxml");
 		Resource jasper = new ClassPathResource("reports/listeUtilisateurs.jasper");
-		jasperFileDirectory = jasper.getFile().getAbsolutePath();
+		// TODO injecter dynamiquement des rapports
+		jasperFileDirectory = "/WEB-INF/classes/reports/" + jasper.getFile().getName();
+		// TODO s'assurer de la synchro
+		listUtilisateurDto = utilisateurService.listAll();
 		reportService.editionListeUtilisateur(listUtilisateurDto, jasper);
 		return SUCCESS;
 	}
